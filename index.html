@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!-- <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcimg3.ibsrv.net%2Fibimg%2Fhgm%2F1920x1080-1%2F100%2F629%2Fapollo-intensa-emozione_100629287.jpg&imgrefurl=https%3A%2F%2Fwww.motorauthority.com%2Fnews%2F1034434_v-12-powered-apollo-intensa-emozione-supercar-revealed&tbnid=Fje2fpECQcFxiM&vet=12ahUKEwi-v72SwIf5AhWv_jgGHdjTCcgQMygBegUIARDeAQ..i&docid=gUB2dWHrO26ssM&w=1920&h=1080&q=apollo%20car&ved=2ahUKEwi-v72SwIf5AhWv_jgGHdjTCcgQMygBegUIARDeAQ" id="Apollo">
+<img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fimgd.aeplcdn.com%2F0x0%2Fn%2Fcw%2Fec%2F51909%2Fa4-exterior-right-front-three-quarter-2.jpeg&imgrefurl=https%3A%2F%2Fwww.carwale.com%2Faudi-cars%2F&tbnid=JUDdpNIleuJRIM&vet=12ahUKEwjlzqmbwIf5AhVwLrcAHXgPBr4QMygAegUIARDaAQ..i&docid=4rTrIdpV61U5lM&w=1920&h=1080&itg=1&q=audi%20car&ved=2ahUKEwjlzqmbwIf5AhVwLrcAHXgPBr4QMygAegUIARDaAQ" id="Audi">
+<img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fstimg.cardekho.com%2Fimages%2Fcarexteriorimages%2F930x620%2FTesla%2FModel-S%2F5252%2F1611840999494%2Ffront-left-side-47.jpg&imgrefurl=https%3A%2F%2Fwww.cardekho.com%2Ftesla%2Fmodel-s&tbnid=l2EpZSi9KYW-PM&vet=12ahUKEwjxh8qkwIf5AhVbz6ACHWPnCckQMygAegUIARDZAQ..i&docid=qIRd5g-5Df72JM&w=930&h=620&q=tesla%20car&ved=2ahUKEwjxh8qkwIf5AhVbz6ACHWPnCckQMygAegUIARDZAQ" id="Tesla">
+<img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fstimg.cardekho.com%2Fimages%2Fcarexteriorimages%2F630x420%2FTata%2FNexon%2F7384%2F1614326304397%2Ffront-left-side-47.jpg%3Fimpolicy%3Dresize%26imwidth%3D480&imgrefurl=https%3A%2F%2Fwww.cardekho.com%2Fcars%2FTata&tbnid=uddx0XyKujsPtM&vet=12ahUKEwj-r4ewwIf5AhX1_TgGHSekDMAQMygDegUIARDeAQ..i&docid=hKyk3ZPzk60hLM&w=480&h=320&q=tata%20car&ved=2ahUKEwj-r4ewwIf5AhX1_TgGHSekDMAQMygDegUIARDeAQ" id="Tata"> -->
+
+<input type="text" onkeypress="pressed(event)">
+<select id="cars">
+  <option value="a">Option A</option>
+</select>
+<button type="button" onclick="go()" id="btnID">Submit</button>
+
+<script>
+var c = document.getElementById("cars");
+
+// Remove existing options
+Array.from(c).forEach((option) => {
+  c.removeChild(option)
+})
+
+// get or set your new options here.
+var carsA = [["Apollo", "firstValue"], ["Audi", "secondValue"]]
+var carsT = [["Tata","first"], ["Tesla","second"]]
+
+// Add new options
+function pressed(e){
+  var key;
+  if(window.event){
+      key=e.keyCode;
+  }else if (e.which) {
+    key=e.which;
+  }
+  if(key==97 || key==65){
+    carsA.map((optionData) => {
+      var opt = document.createElement('option')
+      opt.appendChild(document.createTextNode(optionData[0]));
+      opt.value = optionData[1]
+      c.appendChild(opt);
+    })
+  }else if(key==116 || key==84){
+    carsT.map((optionData) => {
+      var opt = document.createElement('option')
+      opt.appendChild(document.createTextNode(optionData[0]));
+      opt.value = optionData[1]
+      c.appendChild(opt);
+    })
+  }
+}
+
+// function go(){
+//   document.getElementById("btnID").onclick = function() {
+//     document.getElementById("Tesla").style.visibility = "visible";
+// }
+
+</script>
+
+</body>
+</html>
